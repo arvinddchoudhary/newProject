@@ -19,7 +19,7 @@ const SECRET_KEY = 'your_secret_key';
 app.get('/', (req, res) => {
   res.send('Welcome to the To-Do API!');
 });
-
+// changes made by arvind
 // Signup endpoint
 app.post('/signup', async (req, res) => {
   try {
