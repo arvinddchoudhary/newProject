@@ -27,7 +27,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: your-dockerhub-username/my-node-app:latest
+        tags: arvind09112004/my-node-app:latest
 
   deploy:
     runs-on: ubuntu-latest
@@ -41,7 +41,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.EC2_SSH_KEY }}
         script: |
-          docker pull your-dockerhub-username/my-node-app:latest
+          docker pull arvind09112004/my-node-app:latest
           docker stop my-node-app || true
           docker rm my-node-app || true
-          docker run -d -p 80:8080 --name my-node-app your-dockerhub-username/my-node-app:latest
+          docker run -d -p 80:8080 --name my-node-app arvind09112004/my-node-app:latest
