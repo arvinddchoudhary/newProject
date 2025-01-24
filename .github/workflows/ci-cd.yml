@@ -37,9 +37,9 @@ jobs:
     - name: Deploy to EC2
       uses: appleboy/ssh-action@v0.1.3
       with:
-        host: ${{ secrets.EC2_HOST}}
+        host: ${{ secrets.EC2_HOST }}
         username: ubuntu
-        key: ${{ secrets.SSH_KEY}}
+        key: ${{ secrets.EC2_SSH_KEY }}
         script: |
           docker pull arvind09112004/my-node-app:latest
           docker stop my-node-app || true
